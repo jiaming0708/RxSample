@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  envAPIEndpoint: 'https://opendata.epa.gov.tw/webapi/api/rest/datastore/',
+  envToken: '8uuSIS6s4k+6pj6l/ipqUA'
 };
 
 /*
