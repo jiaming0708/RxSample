@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class EnvAPIService {
-  wasteAPI$ = this.http.jsonp(this.generatorUrl('355000000I-001154'), 'callback')
+   public wasteAPI$ = this.http.jsonp(this.generatorUrl('355000000I-001154'), 'callback')
     .pipe(
       map((p: any) => p.result.records)
     );
