@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { Waste } from '@app/models/waste';
 
 
 @Injectable({
@@ -10,7 +11,7 @@ import { map } from 'rxjs/operators';
 export class EnvAPIService {
    public wasteAPI$ = this.http.jsonp(this.generatorUrl('355000000I-001154'), 'callback')
     .pipe(
-      map((p: any) => p.result.records)
+      map((p: any) => p.result.records as Waste[])
     );
   generatorUrl(resouceId: string, params?: any[]): string {
     const queryParam = !params ? '' : `&${params.join('&')}`;
