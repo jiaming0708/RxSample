@@ -9,7 +9,8 @@ import { Waste } from '@app/models/waste';
   providedIn: 'root'
 })
 export class EnvAPIService {
-   public wasteAPI$ = this.http.jsonp(this.generatorUrl('355000000I-001154'), 'callback')
+  // https://opendata.epa.gov.tw/Data/Contents/WROrg/
+  public wasteAPI$ = this.http.jsonp(this.generatorUrl('355000000I-001154'), 'callback')
     .pipe(
       map((p: any) => p.result.records as Waste[])
     );
